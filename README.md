@@ -1,4 +1,5 @@
 # React Practice ⚡️
+My understanding of React through reading the React documentation, completing the React tutorial provided by Facebook, and watching various React talks to gain more conceptual clairty.
 
 ## What is React?
 * Javascript framework for creating user interfaces
@@ -35,4 +36,4 @@ functions that take parameters and return a description of the UI
 3. We create a virtual DOM that shows how your app should eventually look.
 4. We pass the virtual DOM to the backend that computes the necessary operations, and then sends it to the DOM 
 
-#### *Study the Facebook React Docs here: https://quizlet.com/268043893/flashcards*
+#### *Study Facebook's React documentation here: https://quizlet.com/268043893/flashcards*
