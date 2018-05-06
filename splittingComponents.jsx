@@ -53,41 +53,34 @@ function Avatar(props) {
     );
 }
 
-// Next, UserInfo
+// Next, let's put Avatar inside of UserInfo
 function UserInfo(props) {
   return (
-    <div className="UserInfo-name">
-      {props.user.name}
+    <div className="UserInfo">
+      <Avatar user="{props.user}" />
+      <div className="UserInfo-name">
+        {props.user.name}
+      </div>
     </div>
     );
 }
 
-// Next, CommentText
-function CommentText(props) {
-  return (
-    <div className="Comment-text">
-        {props.text}
-    </div>
-    );
-}
-
-// Last, CommentDate
-function CommentDate(props) {
-  return (
-    <div className="Comment-date">
-        {formatDate(props.date)}
-    </div>
-    );
-}
 
 // Now rewrite the Comment component
 function Comment(props) {
   return (
     <div className="Comment">
-      <Avatar user="{props.user}" />
-      <UserInfo user="{props.user}" />
-      <CommentText text="{props.text}" />
-      <CommentDate text="{props.date" />
+    
+      <UserInfo user="{props.author}" />
+
+      <div className="Comment-text">
+        {props.text}
+      </div>
+
+      <div className="Comment-date">
+        {formatDate(props.date)}
+      </div>
+
     </div>
     );
 }
