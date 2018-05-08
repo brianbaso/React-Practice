@@ -14,15 +14,19 @@ class Reservation extends React.Component {
 
   handleInputChange(event) {
     const target = event.target;
-    
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    // is target.type equal to checkbox? 
+    const value = (target.type === 'checkbox') ? target.checked : target.value;
     const name = target.name;
 
-    // this.setState({
-    //   [name]: value
-    // });
+    this.setState({
+      [name]: value
+    });
 
     var partialState = {};
+    // var partialState = {
+    //   name: value
+    // };
+    // How can you go to an index of "isGoing"
     partialState[name] = value;
     this.setState(partialState);
   }
