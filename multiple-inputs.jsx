@@ -26,7 +26,6 @@ class Reservation extends React.Component {
     // var partialState = {
     //   name: value
     // };
-    // How can you go to an index of "isGoing"
     partialState[name] = value;
     this.setState(partialState);
   }
