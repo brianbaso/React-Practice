@@ -71,8 +71,8 @@ const element = {
 */
 
 // ***************************************
-// |		 FUNCTIONAL VS STATE		         |
-// |			 COMPONENTS				              |
+// |		 FUNCTIONAL VS CLASS		         |
+// |			 COMPONENTS				             |
 // ***************************************
 /*
 	Use stateless functions (functional components) whenever possible. The common times
