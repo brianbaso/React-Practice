@@ -85,7 +85,7 @@ import preloadedState from "./initialState";
 	
 	UI -> Action objects -> dispatcher( -> reducer ->) state -> UI
 */
-const store = createStore(rootReducerFunction, preloadedStore);
+const store = createStore(rootReducerFunction, preloadedState);
 
 console.log(store.getState());
 // {todos : [...], visibilityFilter : "SHOW_COMPLETED"}
@@ -108,4 +108,30 @@ store.dispatch({ type : 'ADD_TODO', text : 'Go to swimming pool' });
 // new object stateAfter has a new todo
 
 
+// Using Redux with React via Redux connect
+import {connect} from "react-redux";
+import Account from "components/Account";
+// Action creator function
+import {deposit} from "actions/transactions";
+// Selector function helps us retrieve data from the store
+import {selectLatestTransactions} from "selectors/transactions";
 
+// Take in state and convert it to read only props 
+// In this example, we mapStateToProps will generate this.state.balance and this.state.latestTransactions
+
+// This function is called everytime the store state changes. Each field needed returns as a prop in an object for the wrapped component.
+function mapStateToProps(state, ownProps) {
+	return {
+		balance : state.balance,
+		latestTransactions : selectLatestTransactions(state, 10)
+	};
+}
+
+// Dispatch redux actions from within our react component
+function mapDispatchToProps(dispatch, ownProps) {
+	return {
+		makeDeposit : (amount) => dispatch(deposit(amount))
+	};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Account);
